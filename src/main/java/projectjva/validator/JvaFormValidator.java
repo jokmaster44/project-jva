@@ -20,18 +20,18 @@ public class JvaFormValidator implements Validator<JvaData>{
      * @return ValidatorResult containing validation status
      * and optional ValidationErrorCode
      */
-    public ValidatorResult validate(JvaData form)  {
+    public ValidatorResult validate(final JvaData form)  {
 
         if(form == null){
             return ValidatorResult.error(ValidationErrorCode.FORM_NULL);
         }
 
-        String jva = form.getJva();
+        final String jva = form.getJva();
         if (jva == null || jva.trim().isEmpty()){
             return ValidatorResult.error(ValidationErrorCode.JVA_REQUIRED);
         }
 
-        String k = form.getWeiterKennzeichen();
+        final String k = form.getWeiterKennzeichen();
         if (k != null && k.length() > 50){
             return ValidatorResult.error(ValidationErrorCode.KENNZEICHEN_TOO_LONG);
         }

@@ -34,8 +34,8 @@ public class JvaFormView {
      * Builds and arranges all UI elements inside the layout container.
      */
     private void build() {
-        Label jvaLabel = new Label("JVA *");
-        Label kennLabel = new Label("weitere Kennzeichen");
+        final Label jvaLabel = new Label("JVA *");
+        final Label kennLabel = new Label("weitere Kennzeichen");
 
         jvaCombo.getItems().addAll("Berlin", "Hamburg", "München");
         jvaCombo.setPromptText("Select JVA");

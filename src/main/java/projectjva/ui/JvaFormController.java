@@ -39,14 +39,14 @@ public class JvaFormController {
      * validates it, and displays the validation result.
      */
     private void onValidate() {
-        String jva = view.getJvaCombo().getValue();
-        String kenn = view.getKennField().getText();
-        boolean mitUhrZeit = view.getTimeCheck().isSelected();
-        boolean abdrick = view.getAbdruckCheck().isSelected();
+        final String jva = view.getJvaCombo().getValue();
+        final String kenn = view.getKennField().getText();
+        final boolean mitUhrZeit = view.getTimeCheck().isSelected();
+        final boolean abdrick = view.getAbdruckCheck().isSelected();
 
-        JvaData data = new JvaData(jva, kenn, mitUhrZeit, abdrick);
+        final JvaData data = new JvaData(jva, kenn, mitUhrZeit, abdrick);
 
-        ValidatorResult result = validator.validate(data);
+        final ValidatorResult result = validator.validate(data);
 
         if (result.getStatus() == ValidationStatus.SUCCESS) {
             view.getResultLabel().setText("Result: SUCCESS");

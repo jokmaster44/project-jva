@@ -33,10 +33,10 @@ class JvaDataFormValidatorTest {
     @Test
     void testJvaValidator_returnSuccess_whenFormisValid() {
         //Arange
-        JvaFormValidator validator = new JvaFormValidator();
+        final JvaFormValidator validator = new JvaFormValidator();
         JvaData form = new JvaData("Berlin", null, false, false);
         //Act
-        ValidatorResult result = validator.validate(form);
+        final ValidatorResult result = validator.validate(form);
         //Assert
         assertEquals(ValidationStatus.SUCCESS, result.getStatus());
         assertNull(result.getErrorCode());
@@ -52,11 +52,11 @@ class JvaDataFormValidatorTest {
     @Test
     void testJvaValidator_returnError_whenJvaisNull() {
         // Arrange
-        JvaFormValidator validator = new JvaFormValidator();
+        final JvaFormValidator validator = new JvaFormValidator();
         JvaData form = new JvaData(null, null, false, false);
 
         // Act
-        ValidatorResult result = validator.validate(form);
+        final ValidatorResult result = validator.validate(form);
 
         // Assert
         assertEquals(ValidationStatus.ERROR, result.getStatus());
@@ -80,9 +80,9 @@ class JvaDataFormValidatorTest {
     @Test
     void TestJvaValidator_returnError_whenFormisNull() {
         //Arrange
-        JvaFormValidator validator = new JvaFormValidator();
+        final JvaFormValidator validator = new JvaFormValidator();
         //Act
-        ValidatorResult result = validator.validate(null);
+        final ValidatorResult result = validator.validate(null);
         //Assert
         assertEquals(ValidationStatus.ERROR, result.getStatus());
         assertEquals(ValidationErrorCode.FORM_NULL, result.getErrorCode());
@@ -100,11 +100,11 @@ class JvaDataFormValidatorTest {
     @Test
     void testJvaValidator_returnError_whenKennzeichenTooLong() {
         //Arrange
-        JvaFormValidator validator = new JvaFormValidator();
-        String longText = "a".repeat(51);
-        JvaData form = new JvaData("Berlin", longText, false, false);
+        final JvaFormValidator validator = new JvaFormValidator();
+        final String longText = "a".repeat(51);
+        final JvaData form = new JvaData("Berlin", longText, false, false);
         //Act
-        ValidatorResult result = validator.validate(form);
+        final ValidatorResult result = validator.validate(form);
         //Assert
         assertEquals(ValidationStatus.ERROR, result.getStatus());
         assertEquals(ValidationErrorCode.KENNZEICHEN_TOO_LONG, result.getErrorCode());

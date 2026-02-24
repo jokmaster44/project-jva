@@ -22,12 +22,12 @@ public class JvaApp extends Application {
      */
     @Override
     public void start(Stage stage) {
-        JvaFormView view = new JvaFormView();
+        final JvaFormView view = new JvaFormView();
 
-        Validator<JvaData> validator = new JvaFormValidator();
+        final Validator<JvaData> validator = new JvaFormValidator();
         new JvaFormController(view, validator);
 
-        Scene scene = new Scene(view.getRoot(), 520, 260);
+        final Scene scene = new Scene(view.getRoot(), 520, 260);
         stage.setTitle("JVA Form");
         stage.setScene(scene);
         stage.show();
