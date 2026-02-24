@@ -3,6 +3,7 @@ package projectjva.validator;
 
 /**
  * Generic validator interface.
+ *
  * @param <T> type of object to validate
  */
 public interface Validator<T> {

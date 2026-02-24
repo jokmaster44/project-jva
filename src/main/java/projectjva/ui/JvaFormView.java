@@ -1,10 +1,11 @@
 package projectjva.ui;
 
-
 import javafx.geometry.Insets;
+
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+
 
 /**
  * View class responsible for creating and configuring
@@ -20,7 +21,6 @@ public class JvaFormView {
     private final Button validateBtn = new Button("Validate");
     private final Button sendBtn = new Button("Send");
     private final Label resultLabel = new Label("Result: -");
-
     private final GridPane root = new GridPane();
 
     /**

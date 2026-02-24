@@ -1,12 +1,13 @@
 package projectjva.ui;
 
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import projectjva.model.JvaData;
 import projectjva.validator.JvaFormValidator;
 import projectjva.validator.Validator;
+
 
 /**
  * Entry point of the JavaFX application that initializes the view,
@@ -15,8 +16,7 @@ import projectjva.validator.Validator;
 public class JvaApp extends Application {
 
     /**
-     * Creates the UI, initializes the validator and controller,
-     * and shows the main application window.
+     * Creates the UI, initializes the validator and controller
      *
      * @param stage primary stage provided by JavaFX runtime
      */
@@ -31,14 +31,5 @@ public class JvaApp extends Application {
         stage.setTitle("JVA Form");
         stage.setScene(scene);
         stage.show();
-    }
-
-    /**
-     * Launches the JavaFX application.
-     *
-     * @param args command-line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
     }
 }

@@ -23,6 +23,7 @@ public class ValidatorResult {
 
     /**
      * Private constructor to enforce usage of factory methods.
+     *
      * @param status the validation status
      * @param errorCode the validation error code (null if succes)
      */
@@ -33,6 +34,7 @@ public class ValidatorResult {
 
     /**
      * Creates a successful validation result.
+     *
      * @return a ValidatorResult with status SUCCESS.
      */
     public static ValidatorResult success() {
@@ -41,6 +43,7 @@ public class ValidatorResult {
 
     /**
      * Creates an error validation result with a specific error code.
+     *
      * @param code the validation error code
      * @return a ValidatorResult with Status ERROR.
      */

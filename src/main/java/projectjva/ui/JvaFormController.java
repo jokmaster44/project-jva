@@ -1,8 +1,8 @@
 package projectjva.ui;
 
-
 import projectjva.model.JvaData;
 import projectjva.validator.*;
+
 
 /**
  * Controller responsible for handling user interactions,
