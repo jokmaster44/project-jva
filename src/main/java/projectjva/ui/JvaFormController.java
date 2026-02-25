@@ -12,12 +12,6 @@ public class JvaFormController {
     private final JvaFormView view;
     private final Validator<JvaData> validator;
 
-    /**
-     * Creates a controller instance, connects the view with the validator and binds UI actions to their handlers.
-     *
-     * @param view the UI form view
-     * @param validator the validator used to validate form data
-     */
     public JvaFormController(JvaFormView view, Validator<JvaData> validator) {
         this.view = view;
         this.validator = validator;
@@ -35,21 +29,24 @@ public class JvaFormController {
     /**
      * Collects data from the view, creates a JvaData objects,validates it, and displays the validation result.
      */
-    private void onValidate() {
+    private JvaData collectFormData(){
         final String jva = view.getJvaCombo().getValue();
         final String kenn = view.getKennField().getText();
         final boolean mitUhrZeit = view.getTimeCheck().isSelected();
         final boolean abdrick = view.getAbdruckCheck().isSelected();
 
-        final JvaData data = new JvaData(jva, kenn, mitUhrZeit, abdrick);
+        return new JvaData(jva, kenn, mitUhrZeit, abdrick);
+    }
 
+    private void onValidate(){
+        final JvaData data = collectFormData();
         final ValidatorResult result = validator.validate(data);
 
-        if (result.getStatus() == ValidationStatus.SUCCESS) {
+        if (result.isSuccessful()){
             view.getResultLabel().setText("Result: SUCCESS");
             System.out.println("SUCCESS");
-        } else {
-            view.getResultLabel().setText("Result: ERROR - " + result.getErrorCode());
+        }else {
+            view.getResultLabel().setText("Result: ERROR -" + result.getErrorCode());
             System.out.println("ERROR: " + result.getErrorCode());
         }
     }

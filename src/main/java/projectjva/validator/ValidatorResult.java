@@ -15,6 +15,11 @@ public class ValidatorResult {
      */
     private final ValidationErrorCode errorCode;
 
+    public boolean isSuccessful() {
+        return status == ValidationStatus.SUCCESS;
+    }
+
+
     /**
      * Private constructor to enforce usage of factory methods.
      *

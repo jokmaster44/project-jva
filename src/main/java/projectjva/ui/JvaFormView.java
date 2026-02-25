@@ -26,13 +26,13 @@ public class JvaFormView {
      * Constructs the view and initializes all UI components.
      */
     public JvaFormView() {
-        build();
+        buildLayout();
     }
 
     /**
      * Builds and arranges all UI elements inside the layout container.
      */
-    private void build() {
+    private void buildLayout() {
         final Label jvaLabel = new Label("JVA *");
         final Label kennLabel = new Label("weitere Kennzeichen");
 

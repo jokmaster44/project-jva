@@ -15,4 +15,4 @@ public interface Validator<T> {
          * @return validation result (SUCCESS or ERROR with code)
          */
         ValidatorResult validate(T value);
-    }
+}

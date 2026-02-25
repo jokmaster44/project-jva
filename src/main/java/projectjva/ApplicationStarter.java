@@ -1,11 +1,9 @@
-package projectjva.ui;
+package projectjva;
 
 import javafx.application.Application;
+import projectjva.ui.JvaApp;
 
 
-/**
- * Entry point for the JVA JavaFX application.(Main method)
- */
 public class ApplicationStarter {
     public static void main(String[] args) {
         Application.launch(JvaApp.class, args);

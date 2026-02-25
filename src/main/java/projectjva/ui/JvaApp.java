@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import projectjva.model.JvaData;
-import projectjva.validator.JvaFormValidator;
+import projectjva.validator.JvaDataValidator;
 import projectjva.validator.Validator;
 
 
@@ -24,7 +24,7 @@ public class JvaApp extends Application {
     public void start(Stage stage) {
         final JvaFormView view = new JvaFormView();
 
-        final Validator<JvaData> validator = new JvaFormValidator();
+        final Validator<JvaData> validator = new JvaDataValidator();
         new JvaFormController(view, validator);
 
         final Scene scene = new Scene(view.getRoot(), 520, 260);
