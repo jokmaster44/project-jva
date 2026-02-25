@@ -4,7 +4,7 @@ import javafx.application.Application;
 
 
 /**
- * Start JvaApp from here.
+ * Entry point for the JVA JavaFX application.(Main method)
  */
 public class ApplicationStarter {
     public static void main(String[] args) {

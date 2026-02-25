@@ -7,8 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * Unit tests for JvaValidator
- * This class verifies validation rules for JvaData
+ * Unit tests for JvaValidator, this class verifies validation rules for JvaData
  * JVA must not be null or empty
  * WeiterKennzeichen must not exceed 50 characters
  */
@@ -18,13 +17,10 @@ class JvaDataFormValidatorTest {
     private JvaData form;
 
     /**
-     * Test case: Should return SUCCESS when the form is valid.
+     * Test case: Should return SUCCESS when DataForm is valid.
      *
-     * Initial state:
-     * - A JvaFormValidator instance is created.
-     * - A JvaData object is created with:
-     *
-     * Steps: 1. Execute validation using JvaFormValidator.validate(form).
+     * Steps: 1.
+     * Execute validation using JvaFormValidator.validate(form).
      *
      * Expected result:
      * - Validation returns SUCCESS status.
@@ -32,17 +28,20 @@ class JvaDataFormValidatorTest {
      */
     @Test
     void testJvaValidator_returnSuccess_whenFormisValid() {
-        //Arange
+
+        //Arrange
         final JvaFormValidator validator = new JvaFormValidator();
         JvaData form = new JvaData("Berlin", null, false, false);
+
         //Act
         final ValidatorResult result = validator.validate(form);
+
         //Assert
         assertEquals(ValidationStatus.SUCCESS, result.getStatus());
         assertNull(result.getErrorCode());
     }
 
-    /** Testcase: Should return Error when the form objects itself is null.
+    /** Testcase: Should return Error when the DataObjects itself is null.
     * Initial state: JvaData object, where "jva" is not set.
     * Steps:
     * 1. Run validation.
@@ -51,6 +50,7 @@ class JvaDataFormValidatorTest {
     */
     @Test
     void testJvaValidator_returnError_whenJvaisNull() {
+
         // Arrange
         final JvaFormValidator validator = new JvaFormValidator();
         JvaData form = new JvaData(null, null, false, false);
@@ -64,11 +64,7 @@ class JvaDataFormValidatorTest {
     }
 
     /**
-     * Test case: Should return ERROR when the form object itself is null.
-     *
-     * Initial state:
-     * - A JvaFormValidator instance is created.
-     * - The form object reference is null.
+     * Test case: Should return ERROR when the form DataObject is null.
      *
      * Steps:
      * 1. Execute validation using JvaFormValidator.validate(null).
@@ -79,10 +75,13 @@ class JvaDataFormValidatorTest {
      */
     @Test
     void TestJvaValidator_returnError_whenFormisNull() {
+
         //Arrange
         final JvaFormValidator validator = new JvaFormValidator();
+
         //Act
         final ValidatorResult result = validator.validate(null);
+
         //Assert
         assertEquals(ValidationStatus.ERROR, result.getStatus());
         assertEquals(ValidationErrorCode.FORM_NULL, result.getErrorCode());
@@ -91,7 +90,8 @@ class JvaDataFormValidatorTest {
     /**
      * Test case: Should return ERROR when WeiterKennzeichen exceeds 50 characters.
      *
-     * Steps: 1. Execute validation using JvaFormValidator.validate(form).
+     * Steps: 1.
+     * Execute validation using JvaFormValidator.validate(form).
      *
      * Expected result:
      * - Validation returns ERROR status.
@@ -99,12 +99,15 @@ class JvaDataFormValidatorTest {
      */
     @Test
     void testJvaValidator_returnError_whenKennzeichenTooLong() {
+
         //Arrange
         final JvaFormValidator validator = new JvaFormValidator();
         final String longText = "a".repeat(51);
         final JvaData form = new JvaData("Berlin", longText, false, false);
+
         //Act
         final ValidatorResult result = validator.validate(form);
+
         //Assert
         assertEquals(ValidationStatus.ERROR, result.getStatus());
         assertEquals(ValidationErrorCode.KENNZEICHEN_TOO_LONG, result.getErrorCode());

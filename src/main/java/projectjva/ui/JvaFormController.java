@@ -5,8 +5,7 @@ import projectjva.validator.*;
 
 
 /**
- * Controller responsible for handling user interactions,
- * collecting data from the view, and invoking validation logic.
+ * Controller responsible for handling user interactions, collecting data from the view, and invoking validation logic.
  */
 public class JvaFormController {
 
@@ -14,8 +13,7 @@ public class JvaFormController {
     private final Validator<JvaData> validator;
 
     /**
-     * Creates a controller instance, connects the view with the validator,
-     * and binds UI actions to their handlers.
+     * Creates a controller instance, connects the view with the validator and binds UI actions to their handlers.
      *
      * @param view the UI form view
      * @param validator the validator used to validate form data
@@ -35,8 +33,7 @@ public class JvaFormController {
     }
 
     /**
-     * Collects data from the view, creates a JvaData object,
-     * validates it, and displays the validation result.
+     * Collects data from the view, creates a JvaData objects,validates it, and displays the validation result.
      */
     private void onValidate() {
         final String jva = view.getJvaCombo().getValue();

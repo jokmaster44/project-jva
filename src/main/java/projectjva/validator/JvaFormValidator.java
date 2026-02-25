@@ -4,11 +4,8 @@ import projectjva.model.JvaData;
 
 
 /**
- * Validator responsible for checking business rules:
- * of JvaData
+ * Validator responsible for checking business rules of JvaData
  * This validator ensure:
- *
- * The form objects is not null
  * The JVA field is not null or empty
  * The WeiterKennzeichen field does not exceed 50 characters
  */
@@ -16,9 +13,9 @@ public class JvaFormValidator implements Validator<JvaData>{
 
     /**
      * Validates the provided
+     *
      * @param form the form data to validate
-     * @return ValidatorResult containing validation status
-     * and optional ValidationErrorCode
+     * @return ValidatorResult containing validation status and optional ValidationErrorCode
      */
     public ValidatorResult validate(final JvaData form)  {
 

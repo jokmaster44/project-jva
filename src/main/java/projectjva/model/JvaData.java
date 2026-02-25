@@ -2,15 +2,7 @@ package projectjva.model;
 
 
 /**
- * Represents form data entered by the user
- * This class is an immutable data model that stores
- * Information related to Jva form submission.
- *
- * It contains:
- * Jva required field
- * WeiterKennzeichen optional additional text
- * MitUhrzeitangabe checkbox
- * AbdruckFurAkten chechbox flag
+ * Represents form data entered by the user, information related to Jva form submission.
  */
 public class JvaData {
 
@@ -22,8 +14,8 @@ public class JvaData {
     /**
      * Constructs a new immutable JvaData instance.
      *
-     * @param jva required JVA value
-     * @param weiterKennzeichen optional additional text
+     * @param jva required JVA value, must not be null
+     * @param weiterKennzeichen optional additional text, may be less than 51.
      * @param mitUhrzeitangabe flag indicating time specification
      * @param abdruckfurAkten flag indicating file copy selection
      */

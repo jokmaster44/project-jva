@@ -8,8 +8,7 @@ import javafx.scene.layout.GridPane;
 
 
 /**
- * View class responsible for creating and configuring
- * the graphical user interface elements of the JVA form.
+ * View class responsible for creating and configuring, the graphical user interface elements of the JVA form.
  * This class contains only UI components and no business logic.
  */
 public class JvaFormView {
