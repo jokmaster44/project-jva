@@ -13,9 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class JvaDataFormValidatorTest {
 
-    private JvaFormValidator validator;
-    private JvaData form;
-
     /**
      * Test case: Should return SUCCESS when DataForm is valid.
      *
@@ -74,7 +71,7 @@ class JvaDataFormValidatorTest {
      * - Validation error code is FORM_NULL.
      */
     @Test
-    void TestJvaValidator_returnError_whenFormisNull() {
+    void testJvaValidator_returnError_whenFormisNull() {
 
         //Arrange
         final JvaFormValidator validator = new JvaFormValidator();
